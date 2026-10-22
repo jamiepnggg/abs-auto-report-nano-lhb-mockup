@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ABS Auto Report – TH_BCL_Nano_LHB</title>
+<title>ABS Auto Report – TH_BCL_LHB</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ---------- base ---------- */
@@ -297,9 +297,9 @@ table.tbl{width:100%;border-collapse:collapse;font-size:14px}
       <div class="crumb"><a data-go="projects">Home</a><i>/</i><a data-go="projects">ABS Auto Report Management</a><i>/</i><span class="cur">Report Management</span></div>
       <div class="card">
         <div class="rpt-head">
-          <h1 id="rp-title">TH_BCL_Nano_LHB</h1>
+          <h1 id="rp-title">TH_BCL_LHB</h1>
           <div class="rpt-meta">
-            <span>Funder ID: <b id="rp-fid">12345</b></span><span>Funder Name: <b id="rp-fname">TH_BCL_Nano_LHB</b></span>
+            <span>Funder ID: <b id="rp-fid">12345</b></span><span>Funder Name: <b id="rp-fname">TH_BCL_LHB</b></span>
             <div class="spacer"></div>
             <button class="btn btn-p" id="rp-add" style="margin-right:10px">+ Add New</button>
             <button class="btn" id="rp-import">Import Template</button>
@@ -341,7 +341,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:14px}
 
       <!-- Step 1: Basic Info -->
       <div id="s1">
-        <div class="form-row"><label>Funder Name:</label><div class="ctrl static" id="c-funder">TH_BCL_Nano_LHB</div></div>
+        <div class="form-row"><label>Funder Name:</label><div class="ctrl static" id="c-funder">TH_BCL_LHB</div></div>
         <div class="form-row"><label class="req">Report Name:</label><div class="ctrl"><input class="inp" id="c-name" placeholder="Please enter report name"></div></div>
         <div class="form-row"><label class="req">Report Type:</label><div class="ctrl"><div class="sel" id="c-type"></div></div></div>
         <div class="form-row"><label class="req">Product Type:</label><div class="ctrl"><div class="sel" id="c-prod"></div><div class="help">Only BCL is available for this funder.</div></div></div>
@@ -460,7 +460,7 @@ const ALL_TYPES=[...OLD_TYPES,...NEW_TYPES];
 const TYPE_TABLE={'Debt Sale User List':TABLE_USER,'Debt Sale Loan List':TABLE_LOAN};
 
 const FUNDERS=[
- {id:'12345',name:'TH_BCL_Nano_LHB',n:0,time:'-',email:'-',fresh:true},
+ {id:'12345',name:'TH_BCL_LHB',n:0,time:'-',email:'-',fresh:true},
  {id:'7641252',name:'TH_BCL_Ocean_Three_ABS_1',n:0,time:'-',email:'-'},
  {id:'7641081',name:'TH_SPL_SeaMoney_ABL_02_HSBC',n:0,time:'-',email:'-'},
  {id:'7641031',name:'TH_HSBC_SPL_ABL_01',n:0,time:'-',email:'-'},
@@ -536,7 +536,7 @@ $('q-go').onclick=renderProjects;
 $('q-reset').onclick=()=>{$('q-id').value='';$('q-name').value='';renderProjects()};
 function openFunder(id){
   const f=FUNDERS.find(x=>x.id===id);
-  if(id!=='12345'){toast('Prototype only wires up TH_BCL_Nano_LHB','info');return}
+  if(id!=='12345'){toast('Prototype only wires up TH_BCL_LHB','info');return}
   curFunder=f;
   ['rp-title','rp-fname'].forEach(k=>$(k).textContent=f.name);$('rp-fid').textContent=f.id;
   renderReports();go('reports');
